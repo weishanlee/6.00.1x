@@ -14,7 +14,7 @@ def uniqueValues(aDict):
     aDict: a dictionary
     '''
     # This removes all the dictionary values that are the same. Stores the remaining keys and values in a dictionary
-    nondups = {k:v for k,v in aDict.items() if aDict.values().count(v)==1}
+    nondups = {k:v for k,v in aDict.items() if list(aDict.values()).count(v)==1}
     # takes each key and stores it in a list called dict_list
     dict_list = []
     for key in nondups:
@@ -34,7 +34,7 @@ def unique2(aDict):
     Create a set called nondups to hold all the non-duplicate values
     Store the key in the list nondups, For each key and value, if that value only appears once, 
     '''
-    nondups = [k for k,v in aDict.items() if aDict.values().count(v)==1]
+    nondups = [k for k,v in aDict.items() if list(aDict.values()).count(v)==1]
     # don't forget to sort the list
     nondups.sort()
     # returns the sorted list 
